@@ -1,0 +1,55 @@
+{
+	"name": "express-api",
+	"version": "1.0.0",
+	"description": "A boilerplate Express API built with Node, Express, Mongoose, Swc and TypeScript.",
+	"author": "Ge0rg3e",
+	"license": "ISC",
+	"scripts": {
+		"dev": "nodemon -q --watch src --ext js,ts,json --exec \"ts-node -r tsconfig-paths/register --transpile-only src/index.ts\"",
+		"build": "swc src -d dist --source-maps --copy-files",
+		"start": "npm run build && node dist/src/index.js"
+	},
+	"devDependencies": {
+		"@swc/cli": "^0.3.12",
+		"@swc/core": "^1.5.5",
+		"@types/cookie-session": "^2.0.49",
+		"@types/cors": "^2.8.17",
+		"@types/express": "^4.17.21",
+		"@types/node": "^20.12.11",
+		"express": "^4.19.2",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"tslib": "^2.6.2",
+		"typescript": "^5.4.5"
+	},
+	"prettier": {
+		"$schema": "http://json.schemastore.org/prettierrc",
+		"endOfLine": "lf",
+		"printWidth": 200,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "none",
+		"useTabs": true,
+		"overrides": [
+			{
+				"files": "*.yml",
+				"options": {
+					"tabWidth": 2,
+					"useTabs": false
+				}
+			}
+		]
+	},
+	"dependencies": {
+		"body-parser": "^1.20.2",
+		"cookie-session": "^2.1.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"helmet": "^7.1.0",
+		"hpp": "^0.2.3",
+		"mongoose": "^8.3.4",
+		"zod": "^3.23.8"
+	}
+}
